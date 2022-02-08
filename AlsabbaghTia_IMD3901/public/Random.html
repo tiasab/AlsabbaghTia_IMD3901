@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>My Model</title>
+      
+        <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+        <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
+        <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+
+        
+    </head>
+    <body>
+        <a-scene physics="gravity:-9.8; restitution: 0.7">
+            <a-entity progressive-controls></a-entity>
+            <a-assets>
+                <img id="texture" src="assets/bergua-truong-olivier-tp1-texture-generique/textures/Roughness.png">
+                <img id="ground" src="assets/floor.jpg">
+                <img id="sky" src="assets/bg.jpg">
+                <img id="txt-earth" src="assets/earth.jpeg">
+                <img id="txt-soil" src="assets/metal1.jpg">
+                <a-entity gltf-model="asssets/scene.gltf" id="horse2" grabbable="maxGrabbers: NaN" velocity="" dynamic-body="sphereRadius: NaN" ></a-entity>
+                <a-entity gltf-model="asssets/scene.gltf" id="horse1" grabbable="maxGrabbers: NaN" velocity="" dynamic-body="sphereRadius: NaN"></a-entity>
+                <a-entity gltf-model="asssets/scene.gltf" id="horse2" grabbable="maxGrabbers: NaN" velocity="" dynamic-body="sphereRadius: NaN" visible="" ammo-body=""></a-entity>
+                
+
+                <audio id="background-song" src="assets/Extreme-Sport-Trap-Music-PISTA.mp3"></audio>
+            </a-assets>
+            
+        <a-box
+          src="#texture"
+          position="0 2 -5"
+          rotation="0 45 45"
+          scale="2 2 2"
+          dynamic-body grabbable
+          sound="src: url(assets/Extreme-Sport-Trap-Music-PISTA.mp3); autoplay: true"
+          ></a-box>
+        <a-box color="red" position="-2.5 0 -3"></a-box>
+     
+            <a-sphere src="assets/metal3.jpg"position="10 1.0 -8.987" grabbable  dynamic-body="linearDamping: 0.01">
+            </a-sphere>
+            <a-sphere src="assets/metal1.jpg"position="10 1.0 -7.199" grabbable  dynamic-body="linearDamping: 0.01">
+            </a-sphere>
+            <a-sphere src="assets/metal2.jpg"position="10 1.1 -5.359" grabbable  dynamic-body="linearDamping: 0.01">
+            </a-sphere>
+      
+            <a-entity gltf-model="assets/cow.gltf"></a-entity>
+
+            <a-cylinder id="cyln" color="crimson" height="1" radius="0.1" position="1 0 0"></a-cylinder>
+            
+            <a-obj-model dynamic-body grabbable position="6 8 -7"  src="/assets/nissan-fairlady-300zx-z32-1989/nissan_300zx.obj" material></a-obj-model>
+             <a-sky src="#sky"></a-sky>
+              <a-plane static-body src="#ground" scale="30 40 1" repeat="5 5 1" rotation="-90 0 0"></a-plane>
+        </a-scene>
+    </body>
+</html>
